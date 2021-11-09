@@ -51,7 +51,7 @@ def load_app_cache() -> Dict[str, str]:
 
 def dump_app_cache(data: Dict[str, str]) -> None:
     """Dumps the given data in to the cache dir as a json file"""
-    with open(os.path.join(CACHE_DIR, "default_cmd.json")) as f:
+    with open(os.path.join(CACHE_DIR, "default_cmd.json"), 'w') as f:
         if verify_json_data(data):
             json.dump(data, f)
 
