@@ -9,6 +9,9 @@ from ._cmd_utils import dump_app_cache
 from ._cmd_utils import get_cmd
 from ._cmd_utils import load_app_cache
 from ._const import CACHE_DIR
+from ._const import COLOR_BLUE
+from ._const import COLOR_GREEN
+from ._const import COLOR_RESET
 from ._const import RESERVED_CMDS
 
 
@@ -26,7 +29,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     # the ls, add, rm, and help commands are reserved
     if args.cmd == "ls":
         cmd_dicts = load_app_cache()
-        print(", ".join(list(cmd_dicts)))
+        for cmd_string, alias in cmd_dicts.items():
+            print(
+                f"{COLOR_BLUE}{cmd_string}{COLOR_RESET}: {COLOR_GREEN}{alias}{COLOR_RESET}")
+
         return 0
 
     elif args.cmd == "add":

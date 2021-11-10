@@ -12,3 +12,7 @@ RESERVED_CMDS = [
     "ls",
     "add"
 ]
+
+COLOR_RESET = "\033[0m"
+COLOR_BLUE = "\033[01;34m"
+COLOR_GREEN = "\033[01;32m"
